@@ -1,5 +1,5 @@
-# Raspberry Pi Adhan Clock
-This projects uses a python script which automatically calculates [adhan](https://en.wikipedia.org/wiki/Adhan) times every day and plays all five adhans at their scheduled time using cron. 
+# Raspberry Pi Athan Clock
+This projects uses a python script which automatically calculates [athan](https://en.wikipedia.org/wiki/Adhan) times every day and plays all five athans at their scheduled time using cron. 
 
 ## Prerequisites
 1. Raspberry Pi running Raspbian
@@ -24,7 +24,7 @@ $ /home/pi/adhan/updateAzaanTimers.py --lat <YOUR_LAT> --lng <YOUR_LNG> --method
 
 Replace the arguments above with your location information and calculation method:
 * Set the latitude and longitude so it can calculate accurate prayer times for that location.
-* Set adhan time [calculation method](http://praytimes.org/manual#Set_Calculation_Method).
+* Set athan time [calculation method](http://praytimes.org/manual#Set_Calculation_Method).
 
 If everythig worked, your output will look something like this:
 ```
@@ -44,7 +44,7 @@ If everythig worked, your output will look something like this:
 Script execution finished at: 2017-01-06 21:22:31.512667
 ```
 
-If you look at the last few lines, you'll see that 5 adhan times have been scheduled. Then there is another line at the end which makes sure that at 1am every day the same script will run and calculate adhan times for that day. And lastly, there is a line to clear logs on a monthly basis so that your log file doesn't grow too big.
+If you look at the last few lines, you'll see that 5 athan times have been scheduled. Then there is another line at the end which makes sure that at 1am every day the same script will run and calculate athan times for that day. And lastly, there is a line to clear logs on a monthly basis so that your log file doesn't grow too big.
 
 Note that for later runs you do not have to supply any arguments as they are saved in `/home/pi/adhan/.settings`.
 
@@ -56,18 +56,18 @@ There are 2 additional arguments that are optional, you can set them in the firs
 further runs: `--fajr-azaan-volume` and `azaan-volume`. You can control the volume of the Azaan
 by supplying numbers in millibels. To get more information on how to select the values, run the command with `-h`.
 
-## Configuring custom actions before/after adhan
+## Configuring custom actions before/after athan
 
 Sometimes it is needed to run custom commands either before, after or before
-and after playing adhan. For example, if you have
+and after playing athan. For example, if you have
 [Quran playing continuously](https://github.com/LintangWisesa/RPi_QuranSpeaker),
 you would want to pause and resume the playback. Another example, is to set your
 status on a social network, or a calendar, to block/unblock the Internet
 using [pi.hole rules](https://docs.pi-hole.net/), ... etc.
 
 You can easily do this by adding scripts in the following directories:
-- `before-hooks.d`: Scripts to run before adhan playback
-- `after-hooks.d`: Scripts to run after adhan playback
+- `before-hooks.d`: Scripts to run before athan playback
+- `after-hooks.d`: Scripts to run after athan playback
 
 ### Example:
 To pause/resume Quran playback if using the
@@ -98,6 +98,6 @@ chmod u+x ./after-hooks.d/01-resume-quran-speaker.sh
 
 ## Credits
 I have made modifications / bug fixes but I've used the following as starting point:
-* Python code to calculate adhan times: http://praytimes.org/code/ 
-* Basic code to turn the above into an adhan clock: http://randomconsultant.blogspot.co.uk/2013/07/turn-your-raspberry-pi-into-azaanprayer.html
+* Python code to calculate athan times: http://praytimes.org/code/ 
+* Basic code to turn the above into an athan clock: http://randomconsultant.blogspot.co.uk/2013/07/turn-your-raspberry-pi-into-azaanprayer.html
 * Cron scheduler: https://pypi.python.org/pypi/python-crontab/ 
