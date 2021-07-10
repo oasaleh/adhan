@@ -119,7 +119,7 @@ isDst = time.localtime().tm_isdst
 
 now = datetime.datetime.now()
 strPlayFajrAzaanMP3Command = '{}/playAzaan.sh {}/Adhan-fajr.mp3 {}'.format(root_dir, root_dir, fajr_azaan_vol)
-strPlayAzaanMP3Command = '{}/playAzaan.sh {}/Adhan-Madinah.mp3 {}'.format(root_dir, root_dir, azaan_vol)
+strPlayAzaanMP3Command = '{}/playAzaan.sh {}/Athan-AlAqsa-Dua.mp3 {}'.format(root_dir, root_dir, azaan_vol)
 strUpdateCommand = '{}/updateAzaanTimers.py >> {}/adhan.log 2>&1'.format(root_dir, root_dir)
 strClearLogsCommand = 'truncate -s 0 {}/adhan.log 2>&1'.format(root_dir)
 strJobComment = 'rpiAdhanClockJob'
